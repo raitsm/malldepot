@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h6>Issue Log</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-light table-sm table-hover table-striped">
+
+                <thead class="custom-table-header">
+                    <tr>
+                        <th>Id</th>
+                        <th>Issue</th>
+                        <th>Raised</th>
+                        <th>Solved</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for issue in all_issues %}
+                    <tr class="custom-table-row">
+                        <td>{{ issue.id }}
+                        <td>{{ issue.message }}</td>
+                        <td>{{ issue.raised_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ issue.solved_time.strftime('%Y-%m-%d %H:%M:%S') if issue.solved_time else "---"}}</td>
+                        <td>
+                        {% if not issue.is_resolved() %}
+                        <a href="{{ url_for('stock.resolve_issue_view', issue_id=issue.id) }}" class="btn btn-sm btn-success">Resolve</a>
+                        {% else %}
+                        Resolved
+                        {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination controls -->
+        {% if pagination %}
+        <nav>
+            <ul class="pagination pagination-sm custom-pagination">
+                {% for page in pagination.iter_pages() %}
+                    {% if page %}
+                        <li class="page-item{% if page == pagination.page %} active{% endif %}">
+                            <a class="page-link" href="{{ url_for('stock.view_manage_issues', page=page) }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">â€¦</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

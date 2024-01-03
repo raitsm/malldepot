@@ -1,0 +1,21 @@
+{% extends "stock/item_form.html" %}
+
+
+{% block priority_fields %}
+
+{% endblock %}
+
+{% block item_additional_fields %}
+
+<script>
+    {% if item_added %}
+        alert('Item added successfully.');
+        window.location.href = "{{ url_for('stock.view_items') }}";
+    {% endif %}
+</script>
+
+{% endblock %}
+
+{% block additional_buttons %}
+
+{% endblock %}

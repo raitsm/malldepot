@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+    window.onload = function() {
+        var message = "{{ message }}";
+        var redirectUrl = "{{ url_for('main.index') }}"; 
+        messageAndRedirect(message, redirectUrl);
+    };
+</script>
+{% endblock %}

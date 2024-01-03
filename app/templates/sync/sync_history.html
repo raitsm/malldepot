@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h6>Sync History</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-light table-sm table-hover table-striped">
+
+                <thead class="custom-table-header">
+                    <tr>
+                        <th>Remote</th>
+                        <th>Direction</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Error Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for history_item in sync_history %}
+                    <tr class="custom-table-row">
+                        <td>{{ history_item.remote_name }}</td>
+                        <td>{{ history_item.connection_type.value }}</td>
+                        <td>{{ history_item.timestamp_start.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ history_item.timestamp_end.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ "OK" if history_item.error_code == 0 else "Error " ~ history_item.error_code}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination controls -->
+        {% if pagination %}
+        <nav>
+            <ul class="pagination pagination-sm custom-pagination">
+                {% for page in pagination.iter_pages() %}
+                    {% if page %}
+                        <li class="page-item{% if page == pagination.page %} active{% endif %}">
+                            <a class="page-link" href="{{ url_for('sync.browse_session_history', page=page) }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">…</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

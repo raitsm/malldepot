@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h6>Deleted Stock Items</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-light table-sm table-hover table-striped">
+
+                <thead class="custom-table-header">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Vendor</th>
+                        <th>Deletion Time</th>
+                        <th>Deleted By</th>
+                        <th>Requires Sync</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for deleted_item in all_deleted_items %}
+                    <tr class="custom-table-row">
+                        <td>{{ deleted_item.code }}</td>
+                        <td>{{ deleted_item.name }}</td>
+                        <td>{{ deleted_item.vendor_name }}</td>
+                        <td>{{ deleted_item.deletion_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        <td>{{ deleted_item.user_name }}</td>
+                        <td>{{ 'Yes' if deleted_item.requires_sync else 'No' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination controls -->
+        {% if pagination %}
+        <nav>
+            <ul class="pagination pagination-sm custom-pagination">
+                {% for page in pagination.iter_pages() %}
+                    {% if page %}
+                        <li class="page-item{% if page == pagination.page %} active{% endif %}">
+                            <a class="page-link" href="{{ url_for('stock.view_deleted_items', page=page) }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">â€¦</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

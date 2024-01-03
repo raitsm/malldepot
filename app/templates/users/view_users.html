@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h6>View/Edit Users</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-light table-sm table-hover table-striped">
+                <thead class="custom-table-header">
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Last login</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr class="custom-table-row" ondblclick="window.location='{{ url_for('users.edit_user', user_id=user.id) }}'">
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role.value }}</td>
+                        <td>{{ user.last_logon_as_str() }}</td>
+                        <td>
+                            <a href="{{ url_for('users.edit_user', user_id=user.id) }}" class="btn btn-sm btn-link">Edit</a>
+                            <!-- Delete button can be added here if needed -->
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination controls -->
+        {% if pagination %}
+        <nav>
+            <ul class="pagination pagination-sm">
+                {% for page in pagination.iter_pages() %}
+                    {% if page %}
+                        <li class="page-item{% if page == pagination.page %} active{% endif %}">
+                            <a class="page-link" href="{{ url_for('users.view_users', page=page) }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">…</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block additional_scripts %}
+{% if user_deleted %}
+<script>
+    alert("User deleted successfully.");
+</script>
+{% endif %}
+{% endblock %}

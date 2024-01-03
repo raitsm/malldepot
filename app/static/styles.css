@@ -1,0 +1,134 @@
+
+.table.hover-highlight tbody tr:hover {
+    background-color: #1212c2 !important; /* blue background on hover */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #85edff;
+    cursor: pointer; /* Change cursor to indicate interactivity */
+
+}
+
+.custom-table-header {
+    font-size: 14px;
+    /* other styles */
+}
+.custom-table-row {
+    font-size: 14px;
+    /* other styles */
+}
+/* New CSS for Top-level Menu Hover */
+.navbar-nav .nav-link:hover {
+    background-color: #4c9dd6; /* green background on hover for menu items */
+    border-radius: 5px; /* Slight rounding of corners */
+}
+
+.large-textarea {
+    width: 100%; /* Full width of the container */
+    height: 120px; /* Height of 200 pixels */
+}
+.custom-navbar {
+    background-color: #e3f2fd;
+}
+
+.custom-navbar .dropdown-menu {
+    background-color: #e3f2fd; /* Same as your navbar's background color */
+}
+
+.custom-navbar .dropdown-item:hover {
+    background-color: #4c9dd6; /* Your desired hover color */
+/*    color: #0000;  If you want to change the text color on hover */
+}
+
+
+.btn-ok {
+/*
+    margin-top: 20px; 
+    margin-left: 10px
+*/
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+}
+
+.btn-ok:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.btn-cancel {
+/*    
+    margin-top: 20px; 
+    margin-left: 10px; 
+*/
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #bd2130; /* Darker shade for hover effect */
+}
+
+.btn-generic {
+    /*    
+        margin-top: 20px; 
+        margin-left: 10px; 
+    */
+        background-color: #019bf5; /* Bootstrap danger color */
+        color: white;
+    }
+    
+.btn-generic:hover {
+    background-color: #0076ba; /* Darker shade for hover effect */
+}
+
+/* font sizes to be used for various elements */
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-10 {
+    font-size: 10px;
+}
+
+
+/* input field sizes: small, medium, large, huge */
+.input-small {
+    width: 20%;
+}
+
+.input-medium {
+    width: 40%; 
+}
+
+.input-large {
+    width: 60%; 
+}
+
+.input-huge {
+    width: 60%; 
+}
+
+.card-width-changepass {
+    max-width: 480px; /* use a fixed-size card for input fields */
+}
+
+.card-width-userform {
+    max-width: 480px; /* use a fixed-size card for input fields */
+}
+
+.card-width-userform-wide {
+    max-width: 680px; /* use a fixed-size card for input fields */
+}
+

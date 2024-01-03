@@ -1,0 +1,70 @@
+2023-12-31 15:03:42,030 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 15:03:42,838 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 15:08:22,513 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 15:14:31,269 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 15:25:06,973 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 16:20:21,267 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 16:20:44,100 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 16:20:50,480 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 16:21:22,228 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2023-12-31 16:26:01,970 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2024-01-01 14:15:59,740 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2024-01-01 14:16:00,594 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2024-01-01 14:18:28,468 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:18:28,523 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:18:28,532 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:18:28,566 ERROR: Error 400: Client error: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The CSRF token is missing.</p>
+ [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:18:28,567 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:19:22,346 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2024-01-01 14:19:23,149 INFO: MallDepot launched. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\__init__.py:91]
+2024-01-01 14:22:06,953 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:22:06,981 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:22:06,991 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:22:07,010 ERROR: Error 500: Server error on the destination. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:22:07,011 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:50:27,232 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:50:27,245 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:50:27,248 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:50:27,289 ERROR: Error 500: Server error on the destination. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:50:27,290 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:53:05,285 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:53:05,300 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:53:05,303 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:53:05,339 ERROR: Error 500: Server error on the destination. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:53:05,340 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:55:46,460 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:55:46,500 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:55:46,503 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:55:46,551 ERROR: Error 500: Server error on the destination. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:55:46,551 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:57:51,017 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:57:51,031 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:57:51,034 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:57:51,074 ERROR: Error 500: Server error on the destination. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:57:51,075 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 14:58:59,643 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 14:58:59,675 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 14:58:59,679 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 14:58:59,698 ERROR: Error 400: Client error: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The CSRF token is missing.</p>
+ [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 14:58:59,698 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 15:04:38,004 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]
+2024-01-01 15:04:38,014 INFO: Preparing updates for the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:135]
+2024-01-01 15:04:38,017 INFO: Uploading updatas to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:167]
+2024-01-01 15:04:38,048 ERROR: Error 400: Client error: <!doctype html>
+<html lang=en>
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The CSRF token is missing.</p>
+ [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\utilities\sync_utilities.py:319]
+2024-01-01 15:04:38,048 ERROR: Error uploading updates to the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:172]
+2024-01-01 15:06:50,223 INFO: Downloading purchase history from the store. [in C:\Users\raits\Desktop\RM_studies\5-1 rudens 2023\Starpplatformu_risinajumi\malldepot\app\sync\routes.py:113]

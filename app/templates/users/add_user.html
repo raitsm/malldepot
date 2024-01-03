@@ -1,0 +1,62 @@
+{% extends "users/user_form.html" %}
+
+
+{% block priority_fields %}
+<div class="form-group row mb-3">
+    {{ form.username.label(class="col-sm-6 col-form-label fs-14") }}
+    <div class="col-sm-6">
+        {{ form.username(class="form-control fs-12") }}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block additional_fields %}
+<div class="form-group row mb-3">
+    {{ form.password.label(class="col-sm-6 col-form-label fs-14") }}
+    <div class="col-sm-6">
+        {{ form.password(class="form-control fs-12") }}
+    </div>
+</div>
+{% if form.password.errors %}
+<div class="alert alert-danger col-sm-4 fs-12 mt-2">
+    {% for error in form.password.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+<div class="form-group row mb-3">
+    {{ form.password2.label(class="col-sm-6 col-form-label fs-14") }}
+    <div class="col-sm-6">
+        {{ form.password2(class="form-control fs-12") }}
+    </div>
+</div>
+{% if form.password2.errors %}
+<div class="alert alert-danger col-sm-4 fs-12 mt-2">
+    {% for error in form.password2.errors %}
+        <span>{{ error }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+<script>
+    {% if user_added %}
+        alert('User added successfully.');
+        window.location.href = "{{ url_for('users.view_users') }}";
+    {% endif %}
+</script>
+
+<script>
+    {% if errors %}
+        {% for error in errors %}
+            alert('{{ error }}');
+        {% endfor %}
+    {% endif %}
+</script>
+
+
+{% endblock %}
+
+{% block additional_buttons %}
+<!--     <button type="submit" class="btn btn-ok mt-3" name="submit_add_next" value="add_next">Save & Add Next</button> -->
+{% endblock %}

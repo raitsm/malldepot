@@ -1,0 +1,116 @@
+{% extends "users/user_form.html" %}
+
+{% block priority_fields %}
+    <div class="form-group row mb-3">
+        {{ form.username.label(class="col-sm-6 col-form-label fs-14") }}
+        <div class="col-sm-6">
+            {{ form.username(class="form-control fs-12", disabled=true) }}
+
+        </div>
+    </div>
+
+    {% if delete_self_error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ delete_self_error_message }}
+    </div>
+    {% endif %}
+
+    {% if delete_error %}
+        <div class="alert alert-danger" role="alert">
+            An error occurred during the deletion process.
+        </div>
+    {% endif %}
+
+    <script>
+        {% if errors %}
+            {% for error in errors %}
+                alert('{{ error }}');
+            {% endfor %}
+        {% endif %}
+    </script>
+    
+
+{% endblock %}
+
+
+{% block additional_fields %}
+
+    <div id="passwordChangeSection" style="display: none;">
+        <div class="form-group row mb-3">
+            {{ form.new_password.label(class="col-sm-6 col-form-label fs-14") }}
+            <div class="col-sm-6">
+                {{ form.new_password(class="form-control fs-12", disabled=true, id="newPassword") }}
+            </div>
+        </div>
+        {% if form.new_password.errors %}
+        <div class="alert alert-danger col-sm-4 fs-12 mt-2">
+            {% for error in form.new_password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="form-group row mb-3">
+            {{ form.new_password2.label(class="col-sm-6 col-form-label fs-14") }}
+            <div class="col-sm-6">
+                {{ form.new_password2(class="form-control fs-12", disabled=true, id="newPassword2") }}
+            </div>
+        </div>
+        {% if form.new_password2.errors %}
+        <div class="alert alert-danger col-sm-4 fs-12 mt-2">
+            {% for error in form.new_password2.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block additional_buttons %}
+    <button type="button" id="togglePasswordChangeButton" class="btn btn-sm btn-light ms-2 mt-2" onclick="togglePasswordChange()">Enable Password Change</button>
+    {% if current_user.id != user_id %}
+        <button type="button" class="btn btn-sm btn-danger ms-2 mt-2" onclick="confirmDeleteUser({{ user_id }})">Delete</button>
+    {% endif %}
+
+{% endblock %}
+
+{% block additional_scripts %}
+
+<script>
+    function togglePasswordChange() {
+        var passwordChangeSection = document.getElementById('passwordChangeSection');
+        var newPasswordField = document.getElementById('newPassword');
+        var confirmNewPasswordField = document.getElementById('newPassword2');
+        var toggleButton = document.getElementById('togglePasswordChangeButton');
+
+        if (newPasswordField.disabled) {
+            // Enable password change
+            if (confirm('Are you sure you want to enable password change?')) {
+                passwordChangeSection.style.display = 'block';
+                newPasswordField.disabled = false;
+                confirmNewPasswordField.disabled = false;
+                toggleButton.textContent = 'Disable Password Change';
+            }
+        } else {
+            // Disable password change
+            passwordChangeSection.style.display = 'none';
+            newPasswordField.disabled = true;
+            confirmNewPasswordField.disabled = true;
+            newPasswordField.value = '';
+            confirmNewPasswordField.value = '';
+            toggleButton.textContent = 'Enable Password Change';
+        }
+    }
+</script>
+
+<script>
+    function confirmDeleteUser(userId) {
+        if(confirm('Are you sure you want to delete this user?')) {
+            var deleteUrl = "{{ url_for('users.delete_user', user_id=0) }}".replace('0', userId);
+            window.location.href = deleteUrl;
+        }
+    }
+</script>
+
+
+{% endblock %}

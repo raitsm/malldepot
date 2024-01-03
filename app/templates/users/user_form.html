@@ -1,0 +1,93 @@
+<!-- user_form.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card card-width-userform mb-4">
+        <div class="card-header">
+            <h6>{{ action }}</h6>
+        </div>
+        <div class="card-body">
+            <form method="post" class="form-horizontal">
+                {{ form.csrf_token }}
+
+                {{ form.hidden_tag() }}
+
+                {% block priority_fields %}
+                {% endblock %}
+
+                <!-- Each form group is a row, with labels and inputs as columns -->
+                
+                <div class="form-group row mb-3">
+                    {{ form.given_name.label(class="col-sm-6 col-form-label fs-14") }}
+                    <div class="col-sm-6">
+                        {{ form.given_name(class="form-control fs-12") }}
+                    </div>
+                </div>
+                
+                <div class="form-group row mb-3">
+                    {{ form.surname.label(class="col-sm-6 col-form-label fs-14") }}
+                    <div class="col-sm-6">
+                        {{ form.surname(class="form-control fs-12") }}
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    {{ form.email.label(class="col-sm-6 col-form-label fs-14") }}
+                    <div class="col-sm-6">
+                        {{ form.email(class="form-control fs-12") }}
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    {{ form.phone.label(class="col-sm-6 col-form-label fs-14") }}
+                    <div class="col-sm-6">
+                        {{ form.phone(class="form-control fs-12") }}
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    {{ form.role.label(class="col-sm-6 col-form-label fs-14") }}
+                    <div class="col-sm-6">
+                        {{ form.role(class="form-control fs-12") }}
+                    </div>
+                </div>
+
+                {% block additional_fields %}
+                    <!-- Additional fields will be defined in child templates -->
+                {% endblock %}
+
+
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <div class="d-flex justify-content-start">
+                            <button type="button" class="btn btn-sm btn-light mt-2" onclick="confirmCancel('{{ url_for('users.view_users') }}')">Cancel</button>
+
+                            {% block additional_buttons %}
+                                <!-- Additional buttons will be defined in child templates -->
+                            {% endblock %}
+<!--                             <button type="submit" class="btn btn-sm btn-primary mt-2 ms-2" name="submit" value="save">{{ action }}</button> -->
+                            <button type="submit" class="btn btn-sm btn-primary mt-2 ms-2" name="submit" value="save" onclick="return confirmSubmitChanges()">{{ submit_button_text }}</button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                {% block userform_scripts %}
+
+                <script src="{{ url_for('static', filename='form_utils.js') }}"></script>
+
+
+                {% endblock %}        
+        
+
+                {% block additional_scripts %}
+                {% endblock %}
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

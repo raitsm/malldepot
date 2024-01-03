@@ -1,0 +1,10 @@
+<!-- sync_success.html -->
+{% extends "base.html" %}
+{% block content %}
+<script type="text/javascript">
+    // Call the messageAndRedirect function with the success message and next_url
+    window.onload = function() {
+        messageAndRedirect('Operation successful.', '{{ next_url }}');
+    };
+</script>
+{% endblock %}

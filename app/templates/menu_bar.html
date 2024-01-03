@@ -1,0 +1,80 @@
+<nav class="navbar custom-navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">MallDepot</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                    {% if current_user.is_admin() %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Users
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ url_for('users.view_users') }}">View Users</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('users.add_user') }}">Add User</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('users.change_password') }}">Change Password</a></li>
+                    {% if current_user.is_operator() or current_user.is_read_only() %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Vendors
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ url_for('vendors.view_vendors') }}">View Vendors</a></li>
+                                {% if current_user.is_operator() %}
+                                    <li><a class="dropdown-item" href="{{ url_for('vendors.add_vendor') }}">Add Vendor</a></li>
+                                
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Stock
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ url_for('stock.view_items') }}">View Stock</a></li>
+                                {% if current_user.is_operator() %}
+                                    <li><a class="dropdown-item" href="{{ url_for('stock.add_item') }}">Add Items</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('stock.view_deleted_items') }}">View Deleted Items</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('stock.view_purchase_data') }}">View Purchases</a></li>
+                                {% endif %}
+                                {% if current_user.is_admin() or current_user.is_operator() %}
+                                    <li><a class="dropdown-item" href="{{ url_for('stock.view_manage_issues') }}">Issue Log</a></li>
+                                {% endif %}
+
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if current_user.is_admin() or current_user.is_operator() %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sync
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><form id="resetForm" action="{{ url_for('sync.sync') }}" method="post" onsubmit="confirmAction(event)" data-confirm-message="Are you sure you want to run the sync job? This action cannot be undone.">
+                                    <button type="submit" class="dropdown-item">Run Sync</button>
+                                </form></li>
+                                <li><a class="dropdown-item" href="{{ url_for('sync.browse_session_history') }}">Sync History</a></li>
+
+                                {% if current_user.is_admin() %}
+                                    <li><form id="resetForm" action="{{ url_for('sync.webshop_reset') }}" method="post" onsubmit="confirmAction(event)" data-confirm-message="Are you sure you want to reset the store? This action cannot be undone.">
+                                        <button type="submit" class="dropdown-item">Reset Store</button>
+                                    </form></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('sync.manage_store_connections_view') }}">Manage Store Connections</a></li>
+
+                                {% endif %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="confirmLogout()">Logout</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Login</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.support') }}">Support</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

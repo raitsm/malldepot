@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h6>View/Edit Vendors</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-light table-sm table-hover table-striped">
+                <thead class="custom-table-header">
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Country</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vendor in vendors %}
+                    <tr class="custom-table-row" {% if current_user.is_operator() %} ondblclick="window.location='{{ url_for('vendors.edit_vendor', vendor_id=vendor.id) }}'" {% endif %}>
+                        <td>{{ vendor.name }}</td>
+                        <td>{{ vendor.address }}</td>
+                        <td>{{ vendor.country }}</td>
+                        <td>{{ vendor.status.value }}</td>
+                        <td>
+                            {% if current_user.is_operator() %}
+                            <a href="{{ url_for('vendors.edit_vendor', vendor_id=vendor.id) }}" class="btn btn-sm btn-link">Edit</a>
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination controls -->
+        {% if pagination %}
+        <nav>
+            <ul class="pagination pagination-sm">
+                {% for page in pagination.iter_pages() %}
+                    {% if page %}
+                        <li class="page-item{% if page == pagination.page %} active{% endif %}">
+                            <a class="page-link" href="{{ url_for('vendors.view_vendors', page=page) }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">…</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block additional_scripts %}
+{% if vendor_deleted %}
+<script>
+    alert("vendor deleted successfully.");
+</script>
+{% endif %}
+{% endblock %}

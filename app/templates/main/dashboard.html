@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-content">
+    <p>Welcome, <strong>{{ current_user.username }}</strong>!</p>
+    <p>Logged in at {{  current_user.last_logon_as_str() }}</p>
+
+    <!-- Custom Dashboard Widgets/Links -->
+    <div class="dashboard-widgets">
+        <!-- Widgets can include summaries, links to frequently used features, etc. -->
+    </div>
+</div>
+{% endblock %}

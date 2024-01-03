@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="support-info">
+    <h2>Data Synchronisation.</h2>
+    <h3>Use with caution!</h3>
+    
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+{% endblock %}

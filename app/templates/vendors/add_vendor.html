@@ -1,0 +1,21 @@
+{% extends "vendors/vendor_form.html" %}
+
+
+{% block priority_fields %}
+
+{% endblock %}
+
+{% block vendor_additional_fields %}
+
+<script>
+    {% if vendor_added %}
+        alert('Vendor added successfully.');
+        window.location.href = "{{ url_for('vendor.view_vendors') }}";
+    {% endif %}
+</script>
+
+{% endblock %}
+
+{% block additional_buttons %}
+<!--     <button type="submit" class="btn btn-ok mt-3" name="submit_add_next" value="add_next">Save & Add Next</button> -->
+{% endblock %}

@@ -1,0 +1,10 @@
+<!-- logout_success.html -->
+{% extends "base.html" %}
+{% block content %}
+<script>
+    // Call the function when the page loads
+    window.onload = function() {
+        messageAndRedirect('Logout successful', '{{ url_for("main.index") }}');
+    };
+</script>
+{% endblock %}

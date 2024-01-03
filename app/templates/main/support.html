@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="support-info">
+    <h2>MallDepot - The Most Amazing Stock Warehouse App</h2>
+    <h2>Proof-of-concept version</h2>
+    <h3>For support contact:</h3>
+    <p>Phone: +371-YOU-KNOW</p>
+    <p>E-mail: <a href="mailto:">not_so_important@lv</a></p>
+    
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+{% endblock %}
